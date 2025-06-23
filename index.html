@@ -91,7 +91,7 @@
                 <a target="_blank">Qian He</a>,
               </span>
               <span class="author-block">
-                <a target="_blank">Xinglong Wu</a>,
+                <a target="_blank">Xinglong Wu</a>
               </span>
           </div>
           <!-- <br> -->
@@ -161,42 +161,32 @@
 <section class="hero teaser">
   <div class="container is-max-desktop" style="width: 60%; max-width: none;">
       <div class="hero-body">
-        <div class="columns is-centered has-text-centered">
+        <div class="columns is-centered has-text-left">
           <div class="column">
-            <video src="assets/vbench/overview.mp4" 
-                   style="width:100%; margin-bottom:10px; display: block; margin-left: auto; margin-right: auto;" 
-                   controls 
-                   autoplay 
-                   muted 
-                   loop>
-              Your browser does not support the video tag.
-            </video>
+            <p style="margin-top: 0;">
+              We introduce <b>Phantom-Data</b>, the first general-purpose large-scale cross-pair dataset aimed at addressing the notorious <i>copy-paste</i> problem in subject-to-video generation. Phantom-Data is built upon three key pillars:<br>
+              <b>1. Dataset</b>: It comprises one million identity-consistent pairs spanning a wide range of subject categories and different visual contexts.<br>
+              <b>2. Dataset Pipeline</b>: We propose a structured and scalable data construction pipeline designed to build such dataset.<br>
+              <b>3. Systematic Study</b>: We conduct a comprehensive study on how varying training data affect subject-to-video model performance.
+          </p>
+            <div class="publication-video">
+              <video src="assets/vbench/phantom_data_intro.mp4" 
+                     style="width:90%; margin-bottom:10px; display: block; margin-left: auto; margin-right: auto;" 
+                     controls 
+                     autoplay 
+                     muted 
+                     loop>
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
-        <p style="margin-top: 0;">
-            We introduce <b>Phantom-Data</b>, the first general-purpose large-scale cross-pair dataset aimed at addressing the notorious <i>copy-paste</i> problem in subject-to-video generation. Phantom-Data is built upon three key pillars:<br>
-            <b>1. Dataset</b>: It comprises approximately one million high-quality, identity-consistent pairs spanning a wide range of subject categories and different visual contexts.<br>
-            <b>2. Dataset Pipeline</b>: We propose a structured and scalable data construction pipeline designed to build high-quality, identity-consistent cross-context subject pairs.<br>
-            <b>3. Systematic Study</b>: We conduct a comprehensive study on how varying training data compositions affect model performance in subject-to-video generation.
-        </p>
+        
       </div>
   </div>
 </section>
 
 
-<!-- Paper video. -->
-<section class="hero is-light">
-  <div class="columns is-centered has-text-centered"  style="margin-top: 0px; margin-bottom: 10px;">
-    <div class="column is-three-fifths">
-      <h2 class="title is-3">Video</h2>
-      <div class="publication-video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/KUmGXQpzeW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- / Paper video.   -->
 
 
 <!-- Abstract. -->
@@ -226,6 +216,16 @@
         </div>
         <div class="columns is-centered has-text-centered">
           <div class="column">
+            <div class="publication-video">
+              <video src="assets/vbench/overview.mp4" 
+                     style="width:80%; margin-bottom:10px; display: block; margin-left: auto; margin-right: auto;" 
+                     controls 
+                     autoplay 
+                     muted 
+                     loop>
+                Your browser does not support the video tag.
+              </video>
+            </div>
             <div class="publication-img">
               <img id="architecture" src="assets/vbench/images/dim_results/dataset_overview.png" style="width:800px; margin-top:10px;margin-bottom:10px;"/>
             </div>
