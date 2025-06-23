@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Phantom-Data: Towards a General Subject-Consistent Video Generation Dataset">
+  <meta name="keywords" content="Dataset, Video Generation, Text-to-Video, Subject-to-video Generation, Bytedance, GPT4-o, Video Editing">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phantom-Data: Towards a General Subject-Consistent Video Generation Dataset</title>
+
+<!--   Global site tag (gtag.js) - Google Analytics-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5ZVQZ7NHC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y5ZVQZ7NHC');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+  <link rel="stylesheet" href="./assets/vbench/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/vbench/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./assets/vbench/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./assets/vbench/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./assets/vbench/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./assets/vbench/js/fontawesome.all.min.js"></script>
+  <script src="./assets/vbench/js/bulma-carousel.min.js"></script>
+  <script src="./assets/vbench/js/bulma-slider.min.js"></script>
+  <script src="./assets/vbench/js/index.js"></script>
+</head>
+<body>
+
+<!-- title -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span style="font-weight: bold; font-style: italic">Phantom-Data</span> : Towards a General Subject-Consistent Video Generation Dataset</h1>
+          
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block">CVPR 2024 Highlight</span> -->
+        </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=ow1jGJkAAAAJ&hl=zh-CN" target="_blank">Zhuowei Chen</a><sup>*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=ac5Se6QAAAAJ" target="_blank">Bingchuan Li</a><sup>*&#8224</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://tianxiangma.github.io/" target="_blank">Tianxiang Ma</a><sup>*</sup>,
+            </span>  
+            <span class="author-block">
+                  <a href="https://liulj13.github.io/" target="_blank">Lijie Liu</a><sup>*</sup>,
+              </span>
+              <span class="author-block">
+                  <a target="_blank">Mingcong Liu</a>,
+              </span>
+              <br>
+              <span class="author-block">
+                  <a target="_blank">Yi Zhang</a>,
+              </span>
+              <span class="author-block">
+                <a target="_blank">Gen Li</a>,
+              </span>
+              <span class="author-block">
+                <a target="_blank">Xinghui Li</a>,
+              </span>
+              <span class="author-block">
+                <a target="_blank">Siyu Zhou</a>,
+              </span>
+              <span class="author-block">
+                <a target="_blank">Qian He</a>,
+              </span>
+              <span class="author-block">
+                <a target="_blank">Xinglong Wu</a>,
+              </span>
+          </div>
+          <!-- <br> -->
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">(* equal contributions, &#8224 Project Lead) </span>
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Intelligent Creation Lab, ByteDance &nbsp;&nbsp;
+          </span>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            
+            <span class="link-block">
+              <a href="https://phantom-video.github.io/Phantom/" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>Paper(Phantom-Data)</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://phantom-video.github.io/Phantom" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>Project(Phantom)</span>
+              </a>
+            </span>
+            <!-- Video Link. -->
+            <span class="link-block">
+              <a href="https://www.youtube.com/watch?v=KUmGXQpzeW4" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-youtube"></i>
+                </span>
+                <span>Video</span>
+              </a>
+            </span>
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a href="https://github.com/Phantom-video/Phantom" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub</span>
+              </a>
+            </span>
+          </div>
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- teaser -->
+<section class="hero teaser">
+  <div class="container is-max-desktop" style="width: 80%; max-width: none;">
+      <div class="hero-body">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <video src="assets/vbench/overview.mp4" 
+                   style="width:100%; margin-bottom:10px; display: block; margin-left: auto; margin-right: auto;" 
+                   controls 
+                   autoplay 
+                   muted 
+                   loop>
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <p style="margin-top: 0;">
+            We introduce <b>Phantom-Data</b>, the first general-purpose large-scale cross-pair dataset aimed at addressing the notorious <i>copy-paste</i> problem in subject-to-video generation. Phantom-Data is built upon three key pillars:<br>
+            <b>1. Dataset</b>: It comprises approximately one million high-quality, identity-consistent pairs spanning a wide range of subject categories and different visual contexts.<br>
+            <b>2. Dataset Pipeline</b>: We propose a structured and scalable data construction pipeline designed to build high-quality, identity-consistent cross-context subject pairs.<br>
+            <b>3. Systematic Study</b>: We conduct a comprehensive study on how varying training data compositions affect model performance in subject-to-video generation.
+        </p>
+      </div>
+  </div>
+</section>
+
+
+<!-- Paper video. -->
+<section class="hero is-light">
+  <div class="columns is-centered has-text-centered"  style="margin-top: 0px; margin-bottom: 10px;">
+    <div class="column is-three-fifths">
+      <h2 class="title is-3">Video</h2>
+      <div class="publication-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/KUmGXQpzeW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- / Paper video.   -->
+
+
+<!-- Abstract. -->
+<section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered" style="margin-top: 10px; margin-bottom: 0px;">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 is-centered">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Subject-to-video generation has witnessed substantial progress in recent years. However, existing models still face significant challenges in faithfully following textual instructions. This limitation, often referred to as the copy-paste problem, stems from the prevalent in-pair training paradigm, which entangles subject identity with background and contextual attributes by sampling reference images from the same scene as the target video. To address this issue, we introduce \textbf{Phantom-Data, the first general-purpose cross-pair subject-to-video consistency dataset}, containing approximately one million identity-consistent pairs across diverse categories. Our dataset is constructed via a three-stage pipeline: (1) a general and input-aligned subject detection module, (2) large-scale cross-context subject retrieval from more than 53 million videos and 3 billion images, and (3) prior-guided identity verification to ensure visual consistency under contextual variation. Comprehensive experiments show that training with Phantom-Data significantly improves prompt alignment and visual quality while preserving identity consistency on par with in-pair baselines. 
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<!--/ Abstract. -->
+
+
+
+<!-- Radar_Recent Models -->
+<section class="section" style="margin-top:-50px; margin-bottom:-50px;">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <div class="section-title">
+          <h2 class="title is-3 is-centered">Dataset Overview</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <div class="publication-img">
+              <img id="architecture" src="assets/vbench/images/dim_results/dataset_overview.png" style="width:800px; margin-top:10px;margin-bottom:10px;"/>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 0;">
+          We construct a large-scale, high-quality cross-pair consistency dataset comprising approximately 1 million identity-consistent pairs with over 30,000 multi-subject scenes.
+        </p>
+    </div>
+  </div>
+</section>
+
+<!-- LeaderBoard -->
+<!-- <section class="hero is-light" style="margin-top:-50px; margin-bottom:-50px;">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <div class="section-title">
+          <h2 class="title is-3 is-centered">Leaderboard</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <iframe
+            src="https://vchitect-vbench-leaderboard.hf.space"
+            frameborder="0"
+            width="1400"
+            height="700"
+           ></iframe>
+          </div>
+        </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- Radar_Open Source -->
+<section class="section" style="margin-top:-50px; margin-bottom:-100px;">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <div class="section-title">
+          <h2 class="title is-3 is-centered">Dataset Pipeline</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <div class="publication-img">
+              <img id="architecture" src="assets/vbench/images/dim_results/pipeline.png" style="width:800px; margin-top:10px;margin-bottom:10px;"/>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 0;">
+          1. Subject-centric detection module optimized for this task to obtain general and input-aligned subjects. <br>
+          2. Large-scale cross-context retrieval system to provide cross-pair candidates from diverse contexts. <br>
+          3. Prior-guided identity verification procedure to ensure consistent identity. 
+        </p>
+        <!-- <p class="is-size-7" style="margin-top: 0;">
+          The values have been normalized for better readability of the chart. The normalization process involves scaling each set of performance values to a common scale between 0.3 and 0.8. The formula used for normalization is: (value - min_value) / (max_value - min_value). -->
+    </div>
+  </div>
+</section>
+
+<!-- Radar_Close Source -->
+<section class="section" style="margin-top:-150px; margin-bottom:-100px;">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <div class="section-title">
+          <h2 class="title is-3 is-centered">Study on different training datasets</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <div class="publication-img">
+              <img id="architecture" src="assets/vbench/images/dim_results/main_res.png" style="width:800px; margin-top:10px;margin-bottom:10px;"/>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 0;">
+          We evaluate our method against three representative baselines: (1) In-pair training, which samples thereference subject from the same video; (2) In-pair with copy-augmentation, which introduces spatial andappearance augmentations to reduce overfitting; and (3) Face-based cross-pair, which utilizes face-level identity matching across videos.  Across multiple prompts and subject categories, models trained with in-pair data consistently fail to follow textual instructions, often generating videos with obvious artifacts. In contrast, our cross-pair trained model successfully aligns with the prompt across all cases, producing coherent and faithful subject-driven videos.
+        </p>
+        <!-- <p class="is-size-7" style="margin-top: 0;">
+          The values have been normalized for better readability of the chart. The normalization process involves scaling each set of performance values to a common scale between 0.3 and 0.8. The formula used for normalization is: (value - min_value) / (max_value - min_value). -->
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Radar_I2V_wo_SVD -->
+<section class="section" style="margin-top:-100px; margin-bottom:-80px;">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <div class="section-title">
+          <h2 class="title is-3 is-centered">Why we don't use synthetic data ?</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <div class="publication-img">
+              <img id="architecture" src="assets/vbench/images/dim_results/diff_data.png" style="width:800px; margin-top:10px;margin-bottom:10px;"/>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 0;">
+          We try two SOTA models, GPT4o and DreamO to generate consistent subjects on different context. The results shows these models could still generated inconsistent subject. However our non-synthetic cross-pair data construction pipeline could provide exactly same subjects on different context.
+        </p>
+        <!-- <p class="is-size-7" style="margin-top: 0;">
+          The values have been normalized for better readability of the chart. The normalization process involves scaling each set of performance values to a common scale between 0.3 and 0.8. The formula used for normalization is: (value - min_value) / (max_value - min_value). -->
+    </div>
+  </div>
+</section>
+
+
+
+<!-- BibTeX -->
+<section class="hero is-light is-small" id="BibTeX" >
+  <div class="container is-max-desktop content" style="margin-top: 80px; margin-bottom: 20px;">
+    <h2 class="title">BibTeX</h2>
+    <p>If you find our work useful, please consider citing our paper:</p>
+    <pre><code>@article{liu2025phantom,
+      title={Phantom-data: Subject-consistent video generation via cross-modal alignment},
+      author={Zhuowei Chen, Bingchuan Li, Lijie Liu, Tianxiang Ma, Mingcong Liu, Yi Zhang, Gen Li, Xinghui Li, Siyu Zhou, Qian He, Xinglong Wu},
+      year={2025}
+    }
+
+    @article{liu2025phantom,
+      title={Phantom: Subject-consistent video generation via cross-modal alignment},
+      author={Liu, Lijie and Ma, Tianxiang and Li, Bingchuan and Chen, Zhuowei and Liu, Jiawei and Li, Gen and Zhou, Siyu and He, Qian and Wu, Xinglong},
+      journal={arXiv preprint arXiv:2502.11079},
+      year={2025}
+    }</code></pre>
+
+  </div>
+</section>
+
+<!-- BibTeX -->
+<!-- <section class="hero is-light is-small" id="BibTeX" >
+  <div class="container is-max-desktop content" style="margin-top: 0px; margin-bottom: 20px;">
+    <h2 class="title">Related Works</h2>
+    <p>Our related projects: <a href="https://vchitect.github.io/Evaluation-Agent-project/" target="_blank" style="color: #007BFF;">Evaluation Agent</a></p>
+    <pre><code>@article{zhang2024evaluationagent,
+      title = {Evaluation Agent: Efficient and Promptable Evaluation Framework for Visual Generative Models},
+      author = {Zhang, Fan and Tian, Shulin and Huang, Ziqi and Qiao, Yu and Liu, Ziwei},
+      journal={arXiv preprint arXiv:2412.09645},
+      year = {2024}
+  }</code></pre>
+  </div>
+</section> -->
+
+
+
+
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a>  and <a href="https://vchitect.github.io/VBench-project/"> VBench</a>  project page. Please credit them appropriately.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
+
