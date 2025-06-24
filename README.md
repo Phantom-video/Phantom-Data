@@ -17,3 +17,24 @@
 Phantom-Data: Towards a General Subject-Consistent Video Generation Dataset -->
 ## 📑 Todo List
 - [ ] We will release the dataset, built upon koala-36M, on Huggingface before September 2025.
+
+
+
+## ⭐ Citation
+
+If Phantom-Data is helpful, please help to ⭐ the repo.
+
+If you find this project useful for your research, please consider citing our [paper](https://arxiv.org/abs/2506.18851).
+
+### BibTeX
+```bibtex
+@article{chen2025phantom-data,
+      title={Phantom-Data: Towards a General Subject-Consistent Video Generation Dataset},
+      author={Chen, Zhuowei and Li, Bingchuan and Ma, Tianxiang and Liu, Lijie and Liu, Mingcong and Zhang, Yi and Li, Gen and Li, Xinghui and Zhou, Siyu and He, Qian and Wu, Xinglong},
+      journal={arXiv preprint arXiv:2506.18851},
+      year={2025}
+    }
+```
+
+## 📧 Contact
+If you have any comments or questions regarding this open-source project, please open a new issue or contact [Zhuowei Chen](chenzw01@mail.ustc.edu.cn).
