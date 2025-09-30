@@ -16,7 +16,8 @@
 <!-- # Phantom-Data
 Phantom-Data: Towards a General Subject-Consistent Video Generation Dataset -->
 ## 📑 Todo List
-- [ ] We will release the dataset, built upon koala-36M, on Huggingface before September 2025.
+- [x] We released the dataset, built upon koala-36M, on Huggingface [Phantom-data-Koala36M](https://huggingface.co/datasets/ZhuoweiChen/Phantom-data-Koala36M).
+- [ ] Add more detailed instruction on how to use this dataset after the national vacation.
 
 
 
