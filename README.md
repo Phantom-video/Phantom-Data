@@ -17,7 +17,31 @@
 Phantom-Data: Towards a General Subject-Consistent Video Generation Dataset -->
 ## 📑 Todo List
 - [x] We released the dataset, built upon koala-36M, on Huggingface [Phantom-data-Koala36M](https://huggingface.co/datasets/ZhuoweiChen/Phantom-data-Koala36M).
-- [ ] Add more detailed instruction on how to use this dataset after the national vacation.
+- [x] Add more detailed instruction on how to use this dataset after the national vacation.
+
+## Usage
+### Step 1: Download the Meta Info Parquet Files
+Download the meta info from [Phantom-data-Koala36M](https://huggingface.co/datasets/ZhuoweiChen/Phantom-data-Koala36M). There are two files:
+
+1. **`koala36M_multi_ref_meta_info_merged.parquet`**: This file contains the metadata of all clips. The columns are mostly from Koala36M, with one additionally added column `vid` to uniquely identify each clip.
+
+2. **`koala36M_multi_ref_merged_filtered.parquet`**: This file contains the training data meta info. The columns are:
+    - `vid`: The target clip identifier.
+    - `video_caption`: The caption describing the clip content.
+    - `cross_pair`: A dictionary mapping noun phrases from `video_caption` to cross-modal reference data. Each entry contains:
+        - `obj_from_tgt_video`: Source objects detected in the target clip
+        - `refer_result`: List of matching reference images with bounding boxes
+
+
+### Step 2: Download all clips from the meta info parquet
+Download all clips from `koala36M_multi_ref_meta_info_merged.parquet`. The clips can be downloaded using `youtube_url` + `timestamp`. We refer to [Panda-70M](https://github.com/snap-research/Panda-70M/tree/main/dataset_dataloading) for the download implementation.
+
+### Step 3: Extract Reference Images
+After downloading the clips, extract reference images from `koala36M_multi_ref_merged_filtered.parquet`. The `refer_result` field contains lists of reference images with their corresponding bounding boxes. 
+The frame is from the `vid` and the index can be calculated as: `frame_index = int(num_frames * frame_idx)`. the bounding box denotes `<x_min, y_min, x_max, y_max>`.
+
+Finally we can get the <reference objects, video_caption> ===> target videos triplet pairs.
+
 
 
 
