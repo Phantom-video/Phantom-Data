@@ -43,7 +43,11 @@ The frame is from the `vid` and the index can be calculated as: `frame_index = i
 Finally we can get the <reference objects, video_caption> ===> target videos triplet pairs.
 
 
+## Acknowledgement
+We would like to thank the [Koala-36M team](https://koala36m.github.io/) for their valuable work. And we would like to thank our excellent engineering team Ronggui Peng, Bingqian Yi, Xiaojun Lin for their engineering support.
 
+## Disclaimer
+Our team does not use this dataset for any commercial purposes. The Phantom-Data dataset is released for non-commercial research purposes only. 
 
 ## ⭐ Citation
 
