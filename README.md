@@ -38,7 +38,30 @@ Download all clips from `koala36M_multi_ref_meta_info_merged.parquet`. The clips
 
 ### Step 3: Extract Reference Images
 After downloading the clips, extract reference images from `koala36M_multi_ref_merged_filtered.parquet`. The `refer_result` field contains lists of reference images with their corresponding bounding boxes. 
-The frame is from the `vid` and the index can be calculated as: `frame_index = int(num_frames * frame_idx)`. the bounding box denotes `<x_min, y_min, x_max, y_max>`.
+
+1. Get the refer frame: The frame is from the `vid` and the index can be calculated as: `frame_index = int(num_frames * frame_idx)` and resize with `resize_image(frame_list[frame_index], long_size=768)`. 
+The `resize_image` func is
+```
+def resize_image(img_pil, long_size=1024):
+    width, height = img_pil.size
+    
+    # Check if the longest side exceeds the limit (long_size)
+    if max(width, height) > long_size:
+        # Calculate new dimensions
+        if width > height:
+            new_width = long_size
+            new_height = int((new_width / width) * height)
+        else:
+            new_height = long_size
+            new_width = int((new_height / height) * width)
+            
+        # Resize the image
+        img_pil = img_pil.resize((new_width, new_height), Image.LANCZOS)
+        
+    return img_pil
+```
+
+2. Get refer subjects with the bounding box. The bounding box in the parquet is organized as `<x_min, y_min, x_max, y_max>`. 
 
 Finally we can get the <reference objects, video_caption> ===> target videos triplet pairs.
 
