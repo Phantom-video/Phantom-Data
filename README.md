@@ -1,4 +1,4 @@
-# Phantom-Data: Towards a General Subject-Consistent Video Generation Dataset
+# [ICLR 2026] Phantom-Data: Towards a General Subject-Consistent Video Generation Dataset
 
 
 <div align="center">
